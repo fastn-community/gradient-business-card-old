@@ -1,22 +1,23 @@
--- import: fastn-community.github.io/sunset-business-card/docs
--- import: fastn-community.github.io/sunset-business-card
+-- import: fastn-community.github.io/gradient-business-card/docs
+-- import: fastn-community.github.io/gradient-business-card
 -- import: fastn-stack.github.io/fastn-js/utils
 -- import: fastn-community.github.io/bling/note
+-- import: fastn-community.github.io/inter-font/assets as inter-assets
 
 
 
--- site-doc.doc-home: Sunset Business Card
-current-package: fastn-community.github.io/sunset-business-card
+-- site-doc.doc-home: Gradient Business Card
+current-package: fastn-community.github.io/gradient-business-card
 show-tabs: false
 github-url: https://github.com/fastn-community/business-card
-site-title: Sunset Business Card
+site-title: Gradient Business Card
 
 This guide will demonstrate how to make simple business cards using `fastn`. 
 
 `fastn` is a beginner friendly web-development platform. 
 Check out [`fastn`](https://fastn.com/).
 
--- sunset-business-card.details: John Doe
+-- gradient-business-card.details: John Doe
 company-name: John Doe Pvt. Ltd.
 title: Software Developer
 phone-no: +91 12345 99999
@@ -93,7 +94,7 @@ link: integrate/
 
 -- cb.code: Example usage
 
-\-- sunset-business-card.details: John Doe
+\-- gradient-business-card.details: John Doe
 company-name: John Doe Pvt. Ltd.
 title: Software Developer
 phone-no: +91 12345 99999
@@ -108,7 +109,7 @@ website: www.johndoe.com
 
 -- string front-sample-code:
 
-\-- import: fastn-community.github.io/sunset-business-card
+\-- import: fastn-community.github.io/gradient-business-card
 
 \-- business-card.front: John Doe
 title: Software Developer
@@ -118,7 +119,7 @@ logo: $assets.files.assets.fastn-logo.svg
 
 -- string back-sample-code:
 
-\-- import: fastn-community.github.io/sunset-business-card
+\-- import: fastn-community.github.io/gradient-business-card
 
 \-- business-card.back: 
 logo: $assets.files.assets.fastn-logo.svg
@@ -286,7 +287,7 @@ overflow: auto
 -- ftd.row:
 width.fixed.px: 700
 height.fixed.px: 350
-background.solid: #FFFFFF
+background.linear-gradient: $lg 
 
 -- ftd.image:
 if: { front.qr-code != NULL }
@@ -299,55 +300,49 @@ top.px: 12
 z-index: 2
 
 -- ftd.column:
-width.fixed.percent: 40
+width: fill-container
 height: fill-container
-align-content: center
-spacing.fixed.px: 16
-background.solid: #EF8435
+spacing: space-between
+padding.px: 32
+color: #FFFFFF
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: Hi i'm
+role: $name-font
 
 -- ftd.text: $front.name
-role: $inherited.types.heading-medium
-color: #FFFFFF
-
--- ftd.text: $front.title
-role: $inherited.types.copy-regular
-color: #FFFFFF
+role: $name-font
 
 -- end: ftd.column
 
--- ftd.column:
-width.fixed.percent: 60
-height: fill-container
-align-content: center
-padding-horizontal.px: 24
+-- ftd.row:
+width: fill-container
+spacing: space-between
+role: $card-body-font
 
 -- ftd.column:
-width.fixed.percent: 80
-align-content: left
-spacing.fixed.px: 12
+width.fixed.percent: 40
+
+-- ftd.text: $front.address
+if: { front.email != NULL }
+
+-- end: ftd.column
+
+-- ftd.text: |
+if: { front.email != NULL }
 
 -- ftd.text: $front.email
-if: { front.email != NULL }
-color: #5D6481
-role: $inherited.types.fine-print
+if: { front.address != NULL }
+
+-- ftd.text: |
+if: { front.phone-no != NULL }
 
 -- ftd.text: $front.phone-no
 if: { front.phone-no != NULL }
-color: #5D6481
-role: $inherited.types.fine-print
 
--- ftd.text: $front.address
-if: { front.address != NULL }
-color: #5D6481
-role: $inherited.types.fine-print
-
--- ftd.text: $front.website
-if: { front.address != NULL }
-color: #5D6481
-role: $inherited.types.fine-print
-text-align: center
-
--- end: ftd.column
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -386,7 +381,7 @@ overflow: auto
 -- ftd.row:
 width.fixed.px: 700
 height.fixed.px: 350
-background.solid: #EF8435
+background.linear-gradient: $lg 
 spacing: space-around
 align-content: center
 
@@ -394,7 +389,6 @@ align-content: center
 width: fill-container
 height: fill-container
 align-content: center
-background.image: $bg-image
 
 -- ftd.image: $back.logo
 if: { back.logo != NULL }
@@ -419,8 +413,40 @@ margin-top.px: 16
 
 
 
--- ftd.background-image bg-image:
-src: $assets.files.assets.bg-back.svg
-repeat: no-repeat
-position: center
+-- ftd.linear-gradient lg: 
+direction: right
+colors: $color-values 
+
+-- ftd.linear-gradient-color list color-values:
+
+-- ftd.linear-gradient-color: #EF8435
+stop-position.percent: 22.15
+
+-- ftd.linear-gradient-color: #C9476D
+
+-- ftd.linear-gradient-color: #122E8F
+
+-- end: color-values
+
+
+
+
+
+-- ftd.type name-font-type:
+line-height.px: 88
+size.px: 88
+letter-spacing.px: 0
+weight: 800
+font-family: $inter-assets.fonts.Inter
+
+-- ftd.responsive-type name-font: $name-font-type
+
+-- ftd.type card-body-font-type:
+line-height.px: 20
+size.px: 14
+letter-spacing.px: 0
+weight: 400
+font-family: $inter-assets.fonts.Inter
+
+-- ftd.responsive-type card-body-font: $card-body-font-type
 

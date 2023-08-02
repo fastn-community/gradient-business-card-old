@@ -1,4 +1,4 @@
-# Sunset Business Card - Change Log
+# Gradient Business Card - Change Log
 
 ## Aug 2, 2023
 
