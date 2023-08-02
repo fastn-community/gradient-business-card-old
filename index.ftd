@@ -311,9 +311,12 @@ width: fill-container
 
 -- ftd.text: Hi i'm
 role: $name-font
+classes: responsive-name
 
 -- ftd.text: $front.name
 role: $name-font
+classes: responsive-name
+css: [$assets.files.font.css]
 
 -- end: ftd.column
 
@@ -433,8 +436,6 @@ stop-position.percent: 22.15
 
 
 -- ftd.type name-font-type:
-line-height.px: 88
-size.px: 88
 letter-spacing.px: 0
 weight: 800
 font-family: $inter-assets.fonts.Inter
