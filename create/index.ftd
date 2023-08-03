@@ -66,7 +66,7 @@ margin-vertical.px: 16
 
 
 -- site-doc.button: Add template
-link: https://github.com/fastn-community/gradient-card-template/generate
+link: https://github.com/new?template_name=gradient-card-template&template_owner=fastn-community
 open-in-new-tab: true
 
 -- end: ftd.column
@@ -475,21 +475,6 @@ border-width.px: 1
 border-color: $inherited.colors.border
 margin-vertical.px: 16
 
-/-- ftd.iframe:
-src: https://gargajit.github.io/business-card/
-width: fill-container
-height.fixed.px: 700
-
-
-/-- gradient-business-card.details: Ajit Garg
-company-name: FIfthTry. Ltd.
-title: Software Developer
-phone-no: +91 12345 99999
-email: john@johndoe.com
-address: 123, Block No. A-123, Times Square, Bangalore - 123456
-logo: $assets.files.assets.ipsum-logo.svg
-company-slogan: If you can type you can code
-website: www.johndoe.com
 
 -- end: ftd.column
 
