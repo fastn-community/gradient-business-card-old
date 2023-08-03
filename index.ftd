@@ -9,7 +9,7 @@
 -- site-doc.doc-home: Gradient Business Card
 current-package: fastn-community.github.io/gradient-business-card
 show-tabs: false
-github-url: https://github.com/fastn-community/business-card
+github-url: https://github.com/fastn-community/gradient-business-card
 site-title: Gradient Business Card
 
 This guide will demonstrate how to make simple business cards using `fastn`. 
